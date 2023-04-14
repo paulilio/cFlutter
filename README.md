@@ -1,7 +1,5 @@
 # expenses
 
-Project: Simple personal expense control app.
+Project: Simple personal expense control app. <br />
 Purpose: Study of Flutter.
-
-## Getting Started
 
