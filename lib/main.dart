@@ -1,4 +1,3 @@
-import 'package:expenses/components/transaction_form.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'components/transaction_form.dart';
@@ -12,7 +11,35 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    final ThemeData tema = ThemeData();
+
+    return MaterialApp(
+      home: MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        colorScheme: tema.colorScheme.copyWith(
+          primary: Colors.purple,
+          secondary: Colors.amber,
+        ),
+        fontFamily: 'Quicksand',
+        textTheme: tema.textTheme.copyWith(
+          titleLarge: const TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
   }
 }
 
@@ -47,9 +74,11 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transaction.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
-  _openTransactionFormModal() {
+  _openTransactionFormModal(BuildContext context) {
     showModalBottomSheet(
         context: context,
         builder: (_) {
@@ -66,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
-              _openTransactionFormModal();
+              _openTransactionFormModal(context);
             },
           )
         ],
@@ -90,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          _openTransactionFormModal();
+          _openTransactionFormModal(context);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
