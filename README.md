@@ -1,2 +1,5 @@
 # cFlutter
-flutter study repository
+flutter study repository.
+
+**Projects:** <br />
+[Expensive](../../tree/expenses) - Simple personal expense control app.
