@@ -4,7 +4,7 @@ Project: Simple personal expense control app. <br />
 Purpose: Study of Flutter.
 Source: https://www.udemy.com/course/curso-flutter/
 
-This project was used to study new components, understand some of the ways to work with Flutter and understand important concepts. It was interesting to compare technologies such as React Native, Ionic and Vue.js
+This project was used to study new components, understand some of the ways to work with Flutter and important concepts. It was interesting to compare technologies such as React Native, Ionic and Vue.js. Topics:
 
 * Flutter fundamentals and basic notions
 * Use of diagnostic tools and debugging
