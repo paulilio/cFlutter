@@ -14,5 +14,7 @@ This project was used to study new components, understand some of the ways to wo
 * Flexible & Expanded Component
 * ListTile Component
 * Custom Widget
+* Responsive Techniques
+
 
 Thanks to Leonardo Moura, Max and the entire coder.com.br team, for the excellent content  
