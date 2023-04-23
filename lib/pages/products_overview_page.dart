@@ -52,7 +52,7 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
               onPressed: () {},
               icon: const Icon(Icons.shopping_cart),
             ),
-            builder: (ctx, cart, child) => Badge(
+            builder: (ctx, cart, child) => Badgee(
               value: cart.itemsCount.toString(),
               child: child!,
             ),
