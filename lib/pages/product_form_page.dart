@@ -113,15 +113,12 @@ class _ProductFormPageState extends State<ProductFormPage> {
                 onSaved: (name) => _formData['name'] = name ?? '',
                 validator: (_name) {
                   final name = _name ?? '';
-
                   if (name.trim().isEmpty) {
                     return 'Nome é obrigatório.';
                   }
-
                   if (name.trim().length < 3) {
                     return 'Nome precisa no mínimo de 3 letras.';
                   }
-
                   return null;
                 },
               ),
@@ -213,9 +210,13 @@ class _ProductFormPageState extends State<ProductFormPage> {
                     alignment: Alignment.center,
                     child: _imageUrlController.text.isEmpty
                         ? const Text('Informe a Url')
-                        : FittedBox(
-                            fit: BoxFit.cover,
-                            child: Image.network(_imageUrlController.text),
+                        : SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: FittedBox(
+                              fit: BoxFit.cover,
+                              child: Image.network(_imageUrlController.text),
+                            ),
                           ),
                   ),
                 ],
