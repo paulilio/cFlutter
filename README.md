@@ -10,6 +10,3 @@ git push origin master:shop
 
 # Firebase
 https://console.firebase.google.com/u/0/project/cflutter-shop/overview
-
-
-
