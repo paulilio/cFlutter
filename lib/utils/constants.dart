@@ -5,5 +5,5 @@ class Constants {
       'https://cflutter-shop-default-rtdb.firebaseio.com/products';
   static const orderBaseUrl =
       'https://cflutter-shop-default-rtdb.firebaseio.com/orders';
-  static const webApiKey = 'AIzaSyCrS_IIsO5Ebg7bY1qnsgi0eVXfJ8F__gI';
+  static const webApiKey = 'AIzaSyAOB9uer_xxRprUZnoZSqeK3oenNmingOc';
 }
