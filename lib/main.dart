@@ -7,6 +7,9 @@ void main() {
 
 //Controle Estado: Classe de Controller + Model
 class ExController extends GetxController {
+  //Podemos usar a classe ExController de forma estática (chamada direta)
+  static ExController get to => Get.find();
+
   String titulo = 'Aplicativo Exemplo Getx TM exC';
   int valor = 0;
 
@@ -26,17 +29,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: GetBuilder<ExController>(
             init: ExController(),
-            builder: (obj) {
+            builder: (_) {
               return Scaffold(
                 appBar: AppBar(
-                  title: Text('${obj.titulo}'),
+                  title: Text(Get.find<ExController>().titulo),
                 ),
                 body: Center(
                   child: GestureDetector(
-                    onTap: () => obj.incrementaValor(),
+                    onTap: () => Get.find<ExController>().incrementaValor(),
                     child: Text(
-                      'Valor: ${obj.valor}',
-                      style: TextStyle(fontSize: 30),
+                      'Valor: ${Get.find<ExController>().valor}',
+                      style: const TextStyle(fontSize: 30),
                     ),
                   ),
                 ),
