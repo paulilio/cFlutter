@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Tela1());
+    return const GetMaterialApp(home: Tela1());
   }
 }
 
@@ -27,9 +28,13 @@ class Tela1 extends StatelessWidget {
                 child: const Text('Ir para Tela 2'),
                 onPressed: () {
                   print('Clicou no botão da tela 1');
+
+                  Get.to(Tela2());
+                  /*
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return Tela2();
                   }));
+                  */
                 },
               ),
             )),
@@ -55,7 +60,9 @@ class Tela2 extends StatelessWidget {
                   child: const Text('Retornar a Tela 1'),
                   onPressed: () {
                     print('Clicou no botão da tela 2');
-                    Navigator.pop(context);
+
+                    Get.back();
+                    //Navigator.pop(context);
                   })),
         ),
       ),
