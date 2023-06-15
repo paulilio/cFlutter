@@ -29,7 +29,7 @@ class Tela1 extends StatelessWidget {
                 onPressed: () {
                   print('Clicou no botão da tela 1');
 
-                  Get.to(Tela2());
+                  Get.to(Tela2(), arguments: ['arg1', 'arg2']);
                   /*
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return Tela2();
@@ -52,7 +52,7 @@ class Tela2 extends StatelessWidget {
       child: MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('Tela 2'),
+            title: Text('Tela 2 - ' + Get.arguments[0]),
             backgroundColor: Colors.red,
           ),
           body: Center(
