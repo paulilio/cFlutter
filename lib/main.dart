@@ -11,12 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+        home: Scaffold(
+      appBar: AppBar(
+        title: Text('Aplicativo exemplo GetX TM'),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+      body: Center(
+        child: Text('Meu Aplicativo'),
+      ),
+    ));
   }
 }
 
