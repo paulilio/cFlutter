@@ -30,18 +30,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: GetBuilder<ExController>(
-            //init: ExController(),
-            init: null,
-            builder: (outro) {
+            init: ExController(),
+            builder: (_) {
               return Scaffold(
                 appBar: AppBar(
-                  title: Text(excontroller.titulo),
+                  title: Text(_.titulo),
                 ),
                 body: Center(
                   child: GestureDetector(
                     onTap: () => excontroller.incrementaValor(),
                     child: Text(
-                      'Valor: ${excontroller.valor}',
+                      'Valor: ${_.valor}',
                       style: const TextStyle(fontSize: 30),
                     ),
                   ),
