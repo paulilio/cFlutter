@@ -5,66 +5,42 @@ void main() {
   runApp(const MyApp());
 }
 
+//Controle Estado: Classe de Controller + Model
+class ExController extends GetxController {
+  String titulo = 'Aplicativo Exemplo Getx TM exC';
+  int valor = 0;
+
+  void incrementaValor() {
+    valor++;
+
+    //Notificação a View, pois não usa ChangeNotifier
+    update();
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: Text('Aplicativo exemplo GetX TM'),
-      ),
-      body: Center(
-        child: Text('Meu Aplicativo'),
-      ),
-    ));
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+        home: GetBuilder<ExController>(
+            init: ExController(),
+            builder: (obj) {
+              return Scaffold(
+                appBar: AppBar(
+                  title: Text('${obj.titulo}'),
+                ),
+                body: Center(
+                  child: GestureDetector(
+                    onTap: () => obj.incrementaValor(),
+                    child: Text(
+                      'Valor: ${obj.valor}',
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ),
+                ),
+              );
+            }));
   }
 }
